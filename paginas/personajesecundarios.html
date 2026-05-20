@@ -4,41 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personajes secundarios</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        .personajes-grid {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @keyframes aparecerCard {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .personaje-card {
+            background: linear-gradient(145deg, #ffffff, #fafafa);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            width: 280px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aparecerCard 0.6s ease-out forwards;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .personaje-card:nth-child(1) { animation-delay: 0.1s; }
+        .personaje-card:nth-child(2) { animation-delay: 0.3s; }
+        .personaje-card:nth-child(3) { animation-delay: 0.5s; }
+        .personaje-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #aaa5b1, #8a849e);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        .personaje-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .personaje-card:hover::before {
+            transform: scaleX(1);
+        }
+        .personaje-card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid transparent;
+            transition: all 0.5s;
+        }
+        .personaje-card:hover img {
+            transform: scale(1.08);
+            border-color: #aaa5b1;
+            box-shadow: 0 0 30px rgba(170, 165, 177, 0.4);
+        }
+        .personaje-card h2 {
+            font-family: cursive;
+            margin-bottom: 10px;
+        }
+        .personaje-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
-    <h1>Personajes Secundarios</h1>
+    <header>
+        <div id="logo">Kylian Mbappé</div>
+        <div class="circulo" id="c1">
+            <a href="https://www.realmadrid.com/es-ES">
+                <img src="../imagenes/real madrid.png" alt="RMA">
+            </a>
+        </div>
+        <div class="circulo" id="c2">
+            <a href="https://es.uefa.com/uefachampionsleague/">
+                <img src="../imagenes/15.jpg" alt="parche-champions-15">
+            </a>
+        </div>
+        <div class="circulo" id="c3">
+            <a href="https://www.adidas.es/futbol">
+                <img src="../imagenes/Adidas.jpg" alt="adidas">
+            </a>
+        </div>
+    </header>
 
-<section>
+    <nav>
+        <ul>
+            <li class="boton">
+                <a href="../index.html">
+                    <img src="../imagenes/casa.png" alt="Inicio" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="perfil.html">
+                    <img src="../imagenes/Perfil.png" alt="Perfil" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="premios.html">
+                    <img src="../imagenes/Premios.png" alt="Premios" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="contacto.html">
+                    <img src="../imagenes/Contacto.png" alt="Contacto" width="30" height="30">
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-    <article>
-        <h2>Vinícius Júnior</h2>
-        <a href="personajes/personaje1.html">
-            <img src="../imagenes/vini.jpg" alt="Vini jr" width="300">
-        </a>
-    </article><br>
+    <section id="contenido">
+        <aside id="izq"></aside>
+        <article id="centro">
+            <h1>Personajes Secundarios</h1>
+            <p>Compañeros de equipo de Kylian Mbappé en el Real Madrid:</p>
 
-    <article>
-        <h2>Rodrygo Goes</h2>
-        <a href="personajes/personaje2.html">
-            <img src="../imagenes/rodrigo.jpg" alt="Rodrygo" width="300">
-        </a>
-    </article><br>
+            <div class="personajes-grid">
+                <div class="personaje-card">
+                    <a href="personajes/personaje1.html">
+                        <img src="../imagenes/vini.jpg" alt="Vini jr">
+                        <h2>Vinícius Júnior</h2>
+                        <p>Extremo izquierdo</p>
+                    </a>
+                </div>
 
-</section>
+                <div class="personaje-card">
+                    <a href="personajes/personaje2.html">
+                        <img src="../imagenes/rodrigo.jpg" alt="Rodrygo">
+                        <h2>Rodrygo Goes</h2>
+                        <p>Extremo / Delantero</p>
+                    </a>
+                </div>
 
- <article>
-        <h2>Jude Bellingham</h2>
-        <a href="personajes/personaje3.html">
-            <img src="../imagenes/jude bellingham.jpg" alt="jude bellingham" width="300">
-        </a>
-    </article><br><br>
+                <div class="personaje-card">
+                    <a href="personajes/personaje3.html">
+                        <img src="../imagenes/jude bellingham.jpg" alt="Jude Bellingham">
+                        <h2>Jude Bellingham</h2>
+                        <p>Mediocampista</p>
+                    </a>
+                </div>
+            </div>
+        </article>
+        <aside id="der"></aside>
+    </section>
 
-<a href="../index.html">Volver al inicio</a>
-<a href="perfil.html">||Perfil</a> 
-<a href="premios.html">||Premios</a> 
-<a href="origen.html">||Origen</a>
-<a href="contacto.html">||Contacto</a>
-
-
+    <footer><a href="https://www.realmadrid.com/es-ES">@Real Madrid Club de Fútbol</a></footer>
 </body>
 </html>
