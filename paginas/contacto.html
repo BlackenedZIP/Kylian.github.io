@@ -3,67 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-     <style>
-    form {
-      border: 2px solid #807e7e;
-      width: 300px;
-      padding: 20px;
-      border-radius: 5px;
-      font-family: Arial, sans-serif;
-    }
-    input[type="text"], input[type="password"] {
-      width: 95%;
-      padding: 8px;
-      margin: 5px 0 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    input[type="submit"], input[type="reset"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-    
-    }
-    select{
-        width: 100%;
-        padding: 8px;
-        margin: 5px 0 15px 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-  </style>
-
-
     <title>Contacto</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <style>
+        @keyframes aparecerForm {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        form {
+            border: 2px solid #807e7e;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            animation: aparecerForm 0.8s ease-out;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+        form:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #aaa5b1;
+        }
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+            border-color: #aaa5b1;
+            box-shadow: 0 0 10px rgba(170, 165, 177, 0.3);
+            outline: none;
+            transform: scale(1.01);
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        input[type="reset"] {
+            background-color: #666;
+            margin-top: 10px;
+        }
+        input[type="reset"]:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
-    <h1>Contacto</h1>
-    <form action="#"  method="post">
-        <label>Nombre:</label><br>
-        <input type="text" name="Campo1"><br><br>
+    <header>
+        <div id="logo">Kylian Mbappé</div>
+        <div class="circulo" id="c1">
+            <a href="https://www.realmadrid.com/es-ES">
+                <img src="../imagenes/real madrid.png" alt="RMA">
+            </a>
+        </div>
+        <div class="circulo" id="c2">
+            <a href="https://es.uefa.com/uefachampionsleague/">
+                <img src="../imagenes/15.jpg" alt="parche-champions-15">
+            </a>
+        </div>
+        <div class="circulo" id="c3">
+            <a href="https://www.adidas.es/futbol">
+                <img src="../imagenes/Adidas.jpg" alt="adidas">
+            </a>
+        </div>
+    </header>
 
-        <label>Correo electronico:</label><br>
-        <input type="text" name="Campo2"><br><br>
+    <nav>
+        <ul>
+            <li class="boton">
+                <a href="../index.html">
+                    <img src="../imagenes/casa.png" alt="Inicio" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="perfil.html">
+                    <img src="../imagenes/Perfil.png" alt="Perfil" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="premios.html">
+                    <img src="../imagenes/Premios.png" alt="Premios" width="30" height="30">
+                </a>
+            </li>
+            <li class="boton">
+                <a href="origen.html">
+                    <img src="../imagenes/Origen.png" alt="Origen" width="30" height="30">
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <label> Mensaje: </label>
-     <textarea name="comentarios" rows="5" cols="40" ></textarea><br><br>
+    <section id="contenido">
+        <aside id="izq"></aside>
+        <article id="centro">
+            <h1>Contacto</h1>
+            <p>Si deseas ponerte en contacto con nosotros, completa el siguiente formulario:</p>
+            <form action="#" method="post">
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required>
 
+                <label>Correo electrónico:</label>
+                <input type="text" name="email" required>
 
-    <input type="submit" value="Enviar"> <br> <br>
-       
-    
-    </form> <br> <br>
-    <a href="../index.html">Volver al inicio</a>  
-  <a href="perfil.html">||Perfil</a> 
-  <a href="premios.html">||Premios</a>
-  <a href="origen.html">||Origen</a>
-   <a href="Personajesecundarios.html">||Personajes secundarios</a>
-    
+                <label>Mensaje:</label>
+                <textarea name="mensaje" rows="5" required></textarea>
+
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpiar">
+            </form>
+        </article>
+        <aside id="der"></aside>
+    </section>
+
+    <footer><a href="https://www.realmadrid.com/es-ES">@Real Madrid Club de Fútbol</a></footer>
 </body>
 </html>
